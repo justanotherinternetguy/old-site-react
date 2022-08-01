@@ -1,0 +1,324 @@
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "blackpast";
+  src: url("../assets/blackpast.ttf") format("truetype");
+}
+@font-face {
+  font-family: "brolink";
+  src: url("../assets/brolink.otf") format("opentype");
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background: rgb(0, 16, 31);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  height: inherit;
+}
+
+.Heading {
+  color: rgb(190, 216, 248);
+  min-height: 100vh;
+}
+@layer base {
+  .Heading h1 {
+    font-family: "brolink", sans-serif;
+    background: linear-gradient(to right, rgb(56, 189, 248), rgb(251, 113, 133), rgb(163, 230, 53));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .Heading h3 {
+    font-family: "blackpast", sans-serif;
+    background: linear-gradient(to right, rgb(251, 113, 133), rgb(217, 70, 239), rgb(99, 102, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .Heading p {
+    font-family: "blackpast", sans-serif;
+    font-style: italic;
+    text-transform: lowercase;
+  }
+}
+
+.Info {
+  min-height: 100vh;
+}
+.Info h1 {
+  font-family: "brolink", sans-serif;
+  background: linear-gradient(to right, rgb(217, 70, 239), rgb(220, 38, 38), rgb(251, 146, 60));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Info p {
+  color: rgb(190, 216, 248);
+  font-family: "Lato", sans-serif;
+}
+
+ul.list-interests {
+  list-style: square;
+  font-family: "Lato", sans-serif;
+  color: rgb(190, 216, 248);
+}
+ul.list-interests li {
+  background: linear-gradient(to right, rgb(217, 70, 239), rgb(220, 38, 38), rgb(251, 146, 60));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+ul.list-interests li:nth-child(odd) {
+  background: linear-gradient(to right, rgb(56, 189, 248), rgb(251, 113, 133), rgb(163, 230, 53));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.NavBar {
+  position: sticky;
+  top: 0;
+}
+.NavBar ul {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.NavBar li {
+  display: inline-flex;
+  margin: 1% 3%;
+}
+.NavBar .link {
+  color: rgb(190, 216, 248);
+  font-family: "blackpast", sans-serif;
+}
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: linear-gradient(to top, rgb(219, 234, 254), rgb(147, 197, 253), rgb(59, 130, 246));
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+.tech-title {
+  text-align: center;
+  font-family: "blackpast", sans-serif;
+  background: linear-gradient(to top, rgb(219, 234, 254), rgb(147, 197, 253), rgb(59, 130, 246));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tech {
+  text-align: center;
+}
+
+.tech-icon {
+  display: inline-flex;
+  font-size: 100px !important;
+  padding: 10px !important;
+  text-align: center !important;
+  color: white;
+}
+
+.tech-icons {
+  display: inline-flex;
+  font-size: 100px !important;
+  margin: 15px !important;
+  padding: 10px !important;
+  border: 2px solid rgb(2, 33, 63) !important;
+  border-radius: 5px !important;
+  transition: all 0.4s !important;
+  text-align: center !important;
+  color: white;
+}
+
+.tech-icons {
+  margin: 10px !important;
+  justify-content: center;
+}
+
+.hover {
+  display: none;
+}
+
+.tech-icons:hover {
+  transform: scale(1.1) !important;
+  overflow: hidden !important;
+  border: 2.8px solid rgb(48, 120, 191) !important;
+}
+
+p {
+  color: rgb(190, 216, 248);
+  font-family: "Lato", sans-serif;
+}
+
+strong {
+  background: linear-gradient(to right, rgb(56, 189, 248), rgb(251, 113, 133), rgb(163, 230, 53));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.body-link {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid white !important;
+  padding: 0 10px 0 10px;
+  border-radius: 5px !important;
+  transition: all 0.4s !important;
+  text-align: center !important;
+  color: white;
+}
+
+.body-link:hover {
+  overflow: hidden !important;
+  border: 2px solid rgb(48, 120, 191) !important;
+}
+
+.cal {
+  display: flex;
+  justify-content: center;
+}
+
+.Footer {
+  bottom: 0;
+  position: sticky;
+}
+.Footer ul {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Footer li {
+  display: inline-flex;
+  margin: 0.2% 2%;
+  font-family: "blackpast", sans-serif;
+  color: rgb(190, 216, 248);
+}
+
+.footer-link {
+  color: white;
+  transition: 0.4s;
+}
+
+.footer-link:hover {
+  color: rgb(24, 96, 165);
+}
+
+/*# sourceMappingURL=index.css.map */
